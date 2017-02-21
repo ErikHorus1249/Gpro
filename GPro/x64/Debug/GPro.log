@@ -1,25 +1,27 @@
-﻿Build started 2/20/2017 7:41:55 AM.
-     1>Project "C:\Users\Prabudda\documents\visual studio 2015\Projects\GPro\GPro\GPro.vcxproj" on node 2 (Build target(s)).
+﻿Build started 2/20/2017 8:33:17 PM.
+     1>Project "C:\Users\Prabudda\Documents\Visual Studio 2015\Projects\GPro\GPro\GPro.vcxproj" on node 2 (Build target(s)).
      1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(392,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (GPro.vcxproj).  This can lead to incorrect clean and rebuild behavior.
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\CL.exe /c /IC:\opencv\build\include /IC:\opencv\build\include\opencv /IC:\opencv\build\include\opencv2 /ZI /nologo /W3 /WX- /sdl /Od /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"x64\Debug\\" /Fd"x64\Debug\vc140.pdb" /Gd /TP /errorReport:prompt ball_detect.cpp resource.cpp samples.cpp Source.cpp textDetect.cpp tutorials.cpp
-         Skipping... (no relevant changes detected)
-         tutorials.cpp
-         textDetect.cpp
-         Source.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\CL.exe /c /IC:\opencv\build\include /IC:\opencv\build\include\opencv /IC:\opencv\build\include\opencv2 /ZI /nologo /W3 /WX- /sdl /Od /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"x64\Debug\\" /Fd"x64\Debug\vc140.pdb" /Gd /TP /errorReport:prompt Source.cpp ball_detect.cpp resource.cpp samples.cpp textDetect.cpp
          samples.cpp
+     1>c:\users\prabudda\documents\visual studio 2015\projects\gpro\gpro\samples.cpp(57): warning C4244: 'argument': conversion from 'const float' to 'int', possible loss of data
+     1>c:\users\prabudda\documents\visual studio 2015\projects\gpro\gpro\samples.cpp(60): warning C4244: 'argument': conversion from 'const float' to 'int', possible loss of data
+         Generating Code...
+         Skipping... (no relevant changes detected)
+         textDetect.cpp
          resource.cpp
          ball_detect.cpp
+         Source.cpp
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Prabudda\documents\visual studio 2015\Projects\GPro\x64\Debug\Gradient.exe" /INCREMENTAL /NOLOGO opencv_world320d.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"C:\Users\Prabudda\documents\visual studio 2015\Projects\GPro\x64\Debug\Gradient.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Prabudda\documents\visual studio 2015\Projects\GPro\x64\Debug\Gradient.lib" /MACHINE:X64 x64\Debug\ball_detect.obj
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Prabudda\Documents\Visual Studio 2015\Projects\GPro\x64\Debug\Gradient.exe" /INCREMENTAL /NOLOGO opencv_world320d.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"C:\Users\Prabudda\Documents\Visual Studio 2015\Projects\GPro\x64\Debug\Gradient.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Prabudda\Documents\Visual Studio 2015\Projects\GPro\x64\Debug\Gradient.lib" /MACHINE:X64 x64\Debug\ball_detect.obj
          x64\Debug\resource.obj
          x64\Debug\samples.obj
          x64\Debug\Source.obj
          x64\Debug\textDetect.obj
          x64\Debug\tutorials.obj
-         GPro.vcxproj -> C:\Users\Prabudda\documents\visual studio 2015\Projects\GPro\x64\Debug\Gradient.exe
-     1>Done Building Project "C:\Users\Prabudda\documents\visual studio 2015\Projects\GPro\GPro\GPro.vcxproj" (Build target(s)).
+         GPro.vcxproj -> C:\Users\Prabudda\Documents\Visual Studio 2015\Projects\GPro\x64\Debug\Gradient.exe
+     1>Done Building Project "C:\Users\Prabudda\Documents\Visual Studio 2015\Projects\GPro\GPro\GPro.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:03.35
+Time Elapsed 00:00:02.42
