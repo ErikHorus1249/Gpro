@@ -4,6 +4,7 @@
 #include <opencv\cv.h>
 #include <opencv\highgui.h>
 #include <opencv2/highgui/highgui.hpp>
+#include <opencv2/core/core.hpp>
 #include "header.h"
 #include <vector>
 #include <string>
@@ -14,20 +15,60 @@ using namespace std;
 
  string filen = "ui.xml";
 
+
 int main(int ac, char** av)
 {
+	// ML
+	//train();
 	
+	//predictData();
+	/*int a,b;
+	while (true) {
+		cout << " A : " << endl;
+		cin >> a;
+		cout << " B : " << endl;
+		cin >> b;
+		predictData(a,b);
+	}*/
 	
+	//// -> MOTION DETECTION
+	//if (av[1] != NULL) {
+	//	cout << "argument ::-  "<<av[1] << endl;
+	//	FlowPyrk(av[1]);
+	//}
+	//else {
+	//	cout << " local path:" << endl;
+	//	FlowPyrk("E:/opencvPracticles/sample-f.mp4"); //- > 360p
+	//	//FlowPyrk("E:/opencvPracticles/720pUSAITALYFINAL.mp4"); //- > 720p
+	//}
+	//
+
+	// -> BOUDARY DETECTION
+	
+	//if (av[1] != NULL) {
+	//	cout << "argument ::-  "<<av[1] << endl;
+	//	runProgramX(av[1]);
+	//}
+	//else {
+	//	cout << " local path:" << endl;
+	//	runProgramX("E:/opencvPracticles/sample-1- France vs Brazil- 360p.mp4"); //- > 360p
+	//	//runProgramX("E:/opencvPracticles/720pUSAITALYFINAL.mp4"); //- > 720p   
+	//}
+	
+
+	//runProgramX("E:/opencvPracticles/720pUSAITALYFINAL.mp4");
+	//runProgramX("E:/opencvPracticles/1.mp4");
+	// -> TEXT AREA DETECTION
+	mainText();
+
+
 	//mainly();
 	//ProcessImage();
 	//runProgram();
 	//runImage();
-	ProcessImage();
-
-	//runProgramX();
-	//mainText();
-
-
+	//ProcessImage();
+	//backGroundSubs();
+	//GoProcess();
 	system("pause");
 	return 0;
 }
@@ -97,5 +138,37 @@ waitKey(0);
 system("pause");
 
 */
+
 // no need to delete anything
 
+
+/*vector<Mat> imgs;
+[rows]X[cols]
+float trainingDataz[20][8] = {	{ 100, 10,45,67,43,21,54,13 },{ 150, 10,45,67,43,21,92,65 },
+{ 100, 10,45,67,43,21,54,13 },{ 100, 10,45,67,43,21,54,13 },
+{ 100, 10,45,67,43,21,54,13 } ,{ 100, 10,45,67,43,21,54,13 } ,
+{ 100, 10,45,67,43,21,54,13 } ,{ 100, 10,45,67,43,21,54,13 } ,
+{ 100, 10,45,67,43,21,54,13 } ,{ 100, 10,45,67,43,21,54,13 } };
+
+Mat(rows,cols,type, const Scalar &s)
+Mat trainingDataMatz(10, 8, CV_32FC1, trainingDataz);
+imgs.push_back(trainingDataMatz);
+
+float trainingDataz2[10][8] = { { 100, 10,45,67,43,21,54,13 },{ 150, 10,45,67,43,21,92,65 },
+{ 100, 10,45,67,43,21,54,13 },{ 100, 10,45,67,43,21,54,13 },
+{ 100, 10,45,67,43,21,54,13 } ,{ 100, 10,45,67,43,21,54,13 } ,
+{ 100, 10,45,67,43,21,54,13 } ,{ 100, 10,45,67,43,21,54,13 } ,
+{ 100, 10,45,67,43,21,54,13 } ,{ 100, 10,45,67,43,21,54,13 } };
+
+Mat trainingDataMatz1(10, 8, CV_32FC1, trainingDataz2);
+
+imgs.push_back(trainingDataMatz1);
+
+
+Mat HM,cut;
+hconcat(imgs, HM);
+
+cout << HM.rows << HM.cols << endl;
+Mat reshape(int cn, int newndims, const int *newsz)
+
+cv::imshow("r", HM);*/

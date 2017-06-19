@@ -29,53 +29,17 @@ void help()
 
 void ProcessImage() {
 
-	Mat img;
-	
-	img = imread("E:/opencvPracticles/cvd.PNG");  
 
-	// Read the file
-	if (!img.data) {
-		printf("Could not load image");
-		system("pause");
-	}
 
-	
-	cvtColor(img, img, CV_RGB2GRAY);
-	GaussianBlur(img, img, Size(5, 5), 1.5);
-
-	vector<Vec3f> circles;
-	HoughCircles(img, circles, CV_HOUGH_GRADIENT,
-		2, // accumulator resolution (size of the image / 2)
-		50, // minimum distance between two circles
-		200, // Canny high threshold
-		100, // minimum number of votes
-		25, 50); // min and max radius
-
-	vector<Vec3f>:: const_iterator itc = circles.begin();
-	while (itc != circles.end()) {
-		circle(img,
-			Point((*itc)[0], (*itc)[1]), // circle centre
-			(*itc)[2], // circle radius
-			Scalar(255), // color
-			2); // thickness
-		++itc;
-	}
-	
-	imshow("Histrogram", img);
-	//imshow("image", img);
-	if (waitKey(50) == 27) //wait for 'esc' key press for 30ms. If 'esc' key is pressed, break loop
-	{
-		cout << "esc key is pressed by user" << endl;
-
-	}
-	/* 
-	VideoCapture cap("E:/opencvPracticles/volleyballCropped.mp4");
+	VideoCapture cap("E:/opencvPracticles/vb_frans_brazil.mp4");
 	if (!cap.isOpened())  // if not success, exit program
 	{
 		cout << "ERROR: Cannot open the video file" << endl;
 	}
 	Mat src,cpy;
 	namedWindow("source", CV_WINDOW_NORMAL); //create a window called "MyVideo"
+	
+											 //createTrackbar(trackbar_type, "MyVideo--", &threshold_type, max_type);
 	createTrackbar(trackbar_value_t1, "source", &threshold_value_t1, max_value_t1);
 	createTrackbar(trackbar_value_t2, "source", &threshold_value_t2, max_value_t2);
 	while (1)
@@ -91,6 +55,10 @@ void ProcessImage() {
 		}
 
 
+
+
+
+		// getting height and width
 		int h = src.rows;
 		int w = src.cols;
 		SuccusiveFiffOparatorw(src, cpy, h, w);
@@ -100,12 +68,12 @@ void ProcessImage() {
 			cout << "esc key is pressed by user" << endl;
 			break;
 		}
-		imshow("source", src);
-		imshow("MainVid", cdst);
+		//imshow("source", src);
+		//imshow("MainVid", cdst);
 
 	}
-	*/
-	
+
+
 	/*
 	VideoCapture cap("E:/opencvPracticles/vb_frans_brazil.mp4");
 	if (!cap.isOpened())  // if not success, exit program
@@ -182,16 +150,13 @@ void  SuccusiveFiffOparatorw(Mat img2, Mat copyImg, int height, int width) {
 	int kernalSize = 2;
 	int Gx = 0, Gy = 0, G = 0;
 
-	for (int i = 1; i < (height - 1); i++) {
-		for (int j = 1; j < (width - 1); j++) {
+	for (int i = 0; i < (height - 1); i++) {
+		for (int j = 0; j < (width - 1); j++) {
 			Gx = 0;
 			Gy = 0;
 
-			Gx += ((int)img2.at<uchar>(i - 1, j + 1) + 2 * (int)img2.at<uchar>(i, j + 1) + (int)img2.at<uchar>(i + 1, j + 1))
-				- ((int)img2.at<uchar>(i - 1, j - 1) + 2 * (int)img2.at<uchar>(i, j - 1) + (int)img2.at<uchar>(i + 1, j - 1));
-
-			Gy += ((int)img2.at<uchar>(i - 1, j - 1) + 2 * (int)img2.at<uchar>(i - 1, j) + (int)img2.at<uchar>(i - 1, j + 1))
-				- ((int)img2.at<uchar>(i + 1, j - 1) + 2 * (int)img2.at<uchar>(i + 1, j) + (int)img2.at<uchar>(i + 1, j + 1));
+			Gx += (int)img2.at<uchar>(i, j) - (int)img2.at<uchar>(i, j + 1);
+			Gy += (int)img2.at<uchar>(i, j) - (int)img2.at<uchar>(i + 1, j);
 
 			G = abs(Gx) + abs(Gy);
 
@@ -246,12 +211,3 @@ void salt(Mat &image, int n) {
 
 
 }
-
-class MorphoFeatures {
-private:
-	int threshold;  // threshold to produce binary image
-	Mat cross;      // structuring elements used in corner detection
-	Mat Diamond;
-	Mat square;
-	Mat x;
-};
